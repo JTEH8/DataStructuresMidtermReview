@@ -34,21 +34,18 @@ void dlist::build() {
 
 void dlist::remove9(){
   node* current = head;
-  if(current == NULL){
-    return;
-  }
-  else{
-    if(current != NULL){
-     if(current->data > 9){
+  while(current != NULL){
+    if(current->data > 9){
       current->previous->next = current->next;
       current->next->previous = current->previous;
-     }
+    }
     if(current->next != NULL){
       current = current->next;
-    } 
     }
-  }
-  
+    else{
+      return;
+    }
+    }
 }
 
 void dlist::display() {
