@@ -23,7 +23,8 @@ class clist
 
 	/* *****************YOUR TURN! ********************* */
 	//Write your function prototype here:
-  void sumEven();
+  node* getHead();
+  void sumEven(node* head, int & sum);
   
 	private:
 		node * rear;

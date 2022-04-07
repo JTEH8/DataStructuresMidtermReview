@@ -33,20 +33,21 @@ void clist::build() {
   current->next = rear;
 }
 
-void clist::sumEven(){
-  node* current = rear->next;
-  int i = 0;
-  while(current != rear){
-    if(current->data % 2 == 0){
-      i+=current->data;
+node* clist::getHead(){
+  return rear->next;
+}
+
+void clist::sumEven(node* head, int & sum){
+  if(head != rear){
+    if(head->data % 2 == 0){
+      sum+=head->data;
     }
-      current = current->next;
+    sumEven(head->next, sum);
     }
   if(rear->data % 2 == 0){
-    i+=rear->data;
+    sum+=rear->data;
   }
-  
-  cout << "Here's a sum of all the even numbers in the CLL: " << i << endl;
+  return;
 }
 
 void clist::display() {

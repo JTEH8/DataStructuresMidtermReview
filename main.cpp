@@ -9,7 +9,10 @@ int main()
     object.display();	//displays the list
 
     //PLEASE PUT YOUR CODE HERE to call the function assigned
-    object.sumEven();
+    int sum = 0;
+    object.sumEven(object.getHead(), sum);
+
+    cout << "Here's a sum of all the even numbers in the CLL: " << sum << endl;
 
     object.display(); //resulting list after your function call!
     
