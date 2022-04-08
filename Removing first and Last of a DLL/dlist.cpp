@@ -34,13 +34,13 @@ void dlist::build() {
 
 void dlist::removeFirstAndLast(){
   node* current = new node();
-  current = head->next;
-  current->previous = NULL;
-  head = current;
+  current = head;
+  head = head->next;
+  delete current;
   node* temp = new node();
-  temp = tail->previous;
-  temp->next = NULL;
-  tail = temp;
+  temp = tail;
+  tail = tail->previous;
+  delete temp;
 }
 
 void dlist::display() {
